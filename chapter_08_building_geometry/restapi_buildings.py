@@ -113,7 +113,7 @@ def submit_job(coords, projection, content, formats, epost, token):
         raise ValueError("Invalid format")
 
     # Use default EPSG in area object
-    epsg = projection.split()[0].split(":")[1] if projection.startswith("EPSG") else "25833"        
+    epsg = projection.split()[0].split(":")[1] if projection.startswith("EPSG") else "25833"
 
     # String defining the geometry of the area to be exported
     omrade = f'{{"geometryType":"esriGeometryPolygon","features":[{{"geometry":{{"rings":[{coords}],"spatialReference":{{"wkid":{epsg},"latestWkid":{epsg}}}}}}}],"sr":{{"wkid":{epsg},"latestWkid":{epsg}}}}}'
